@@ -32,13 +32,31 @@ export const registerUser = asyncHandler(async (req, res) => {
 });
 
 export const loginUser = asyncHandler(async (req, res) => {
-    const {email,password} = req.body;
-    if(!email||!password){
+    const { email, password } = req.body;
+
+    if (!email || !password) {
         res.status(400);
-        throw new Error('All fields are mandatory')
+        throw new Error('All fields are mandatory');
     }
-    
-})
+
+    const loginUser = await User.findOne({ email });
+
+    if (loginUser && (await bcrypt.compare(password, loginUser.password))) {
+        const accessToken = jwt.sign({
+            user: {
+                username: loginUser.username,
+                email: loginUser.email,
+                id: loginUser.id,
+            }
+        }, process.env.JWT_SECRET_TOKEN, { expiresIn: '15min' });
+
+        return res.status(200).json({ accessToken });
+    } else {
+        res.status(401);
+        throw new Error('Email or password is not valid');
+    }
+});
+
 
 export const currentUser =  asyncHandler(async (req, res) => {
     const { name, email } = req.body;
