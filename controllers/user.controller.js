@@ -59,7 +59,6 @@ export const loginUser = asyncHandler(async (req, res) => {
 
 
 export const currentUser =  asyncHandler(async (req, res) => {
-    const { name, email } = req.body;
-    res.status(201).json({ message: 'User created', data: { name, email } });
+    res.json(req.user);
 });
 
