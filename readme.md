@@ -1,5 +1,5 @@
-```markdown
-# Backend Contact Manager App
+
+# Contact Manager App Backend 
 
 ## Description
 The Backend Contact Manager App is a JavaScript-based application designed to help users manage their contacts efficiently. The app provides functionalities to add, update, delete, and view contact information.
@@ -48,5 +48,3 @@ Contributions are welcome! Please follow these steps to contribute:
 - **GitHub:** [yhimanshu22](https://github.com/yhimanshu22)
 - **Email:** [your-email@example.com](mailto:himu09854@gmail.com)
 ```
-
-Feel free to customize this template according to your project's specific needs. Once you have made the necessary changes, you can save the README file in your repository.
