@@ -47,4 +47,3 @@ Contributions are welcome! Please follow these steps to contribute:
 - **Author:** Himanshu Yadav
 - **GitHub:** [yhimanshu22](https://github.com/yhimanshu22)
 - **Email:** [your-email@example.com](mailto:himu09854@gmail.com)
-```
